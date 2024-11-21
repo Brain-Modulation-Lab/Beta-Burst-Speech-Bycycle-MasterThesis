@@ -1,5 +1,6 @@
 # Beta Bust Speech Bycycle Analysis
-## "Investigation of intracranial electrophysiological dynamics  of the cortico-basal ganglia circuit in Parkinsonian patients performing intraoperative speech production tasks" 
+## Neural Engineering Thesis Project 
+## Title: "Investigation of intracranial electrophysiological dynamics  of the cortico-basal ganglia circuit in Parkinsonian patients performing intraoperative speech production tasks" 
 Main author: Lucia Poma  
 Supervisors: R.M.Richardson, MD, A.Mazzoni  
 Co-supervisors: A.Bush, A.Vergani  
