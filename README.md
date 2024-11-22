@@ -23,4 +23,21 @@ You need to manually download and include (only the main folder!) them in your M
 bml_defaults
 ft_defaults
 ```
+Before running the project, ensure you have the following installed:
+- MATLAB 2022a 
+- FieldTrip toolbox
+- BML toolbox
+- python 3.8 or higher
+- FOOOF 1.0 wrap for MATLAB
+- Bycycle 1.0 wrap for MATLAB
+
+Structure of the project:
+ -  1_data_overview   
+ -  2_preprocessing                   
+ -  3_timefrquency_analysis            
+ -  4_bursting_detection
+ -  5_beta_bursts_speech 
+ -  6_beta_speech_metrics
+
+ Author: Lucia Poma
 
