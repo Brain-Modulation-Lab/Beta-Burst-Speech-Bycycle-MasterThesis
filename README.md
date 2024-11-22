@@ -37,7 +37,7 @@ Before running the project, ensure you have the following installed:
  -  3_timefrquency_analysis            
  -  4_bursting_detection
  -  5_beta_bursts_speech 
- -  6_beta_speech_metrics
+ -  6_beta_speech_metrics  
 All the functions are in the folder "functions"
 
 Author: Lucia Poma
