@@ -1,0 +1,83 @@
+label,area,area_fullname,color
+6a,PMC,Premotor Cortex,#FFB300
+6d,PMC,Premotor Cortex,#FFB300
+FEF,PMC,Premotor Cortex,#FFB300
+55b,PMC,Premotor Cortex,#FFB300
+PEF,PMC,Premotor Cortex,#FFB300
+6r,PMC,Premotor Cortex,#FFB300
+6v,PMC,Premotor Cortex,#FFB300
+OP1,POC,Posterior Opercular Cortex,#000073
+OP2-3,POC,Posterior Opercular Cortex,#000073
+OP4,POC,Posterior Opercular Cortex,#000073
+PFcm,POC,Posterior Opercular Cortex,#000073
+FOP1,POC,Posterior Opercular Cortex,#000073
+43,POC,Posterior Opercular Cortex,#000073
+44,IFG,Inferior Frontal Cortex,#FFFF00
+45,IFG,Inferior Frontal Cortex,#FFFF00
+47l,IFG,Inferior Frontal Cortex,#FFFF00
+p47r,IFG,Inferior Frontal Cortex,#FFFF00
+IFSa,IFG,Inferior Frontal Cortex,#FFFF00
+IFSp,IFG,Inferior Frontal Cortex,#FFFF00
+IFJa,IFG,Inferior Frontal Cortex,#FFFF00
+IFJp,IFG,Inferior Frontal Cortex,#FFFF00
+1,SMC,Somatosensory and Motor Cortex,#80E680
+2,SMC,Somatosensory and Motor Cortex,#80E680
+3a,SMC,Somatosensory and Motor Cortex,#80E680
+3b,SMC,Somatosensory and Motor Cortex,#80E680
+4,SMC,Somatosensory and Motor Cortex,#80E680
+PSL,TPOJ,Temporo-Parieto-Occipital Junction,#4D0080
+STV,TPOJ,Temporo-Parieto-Occipital Junction,#4D0080
+TPOJ1,TPOJ,Temporo-Parieto-Occipital Junction,#4D0080
+TPOJ2,TPOJ,Temporo-Parieto-Occipital Junction,#4D0080
+TPOJ3,TPOJ,Temporo-Parieto-Occipital Junction,#4D0080
+TGd,LTC,Lateral Temporal Cortex,#008000
+TE1a,LTC,Lateral Temporal Cortex,#008000
+TE2a,LTC,Lateral Temporal Cortex,#008000
+TE1m,LTC,Lateral Temporal Cortex,#008000
+TE1p,LTC,Lateral Temporal Cortex,#008000
+TE2p,LTC,Lateral Temporal Cortex,#008000
+PHT,LTC,Lateral Temporal Cortex,#008000
+TGV,LTC,Lateral Temporal Cortex,#008000
+TF,LTC,Lateral Temporal Cortex,#008000
+9-46d,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+46,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+p9-46v,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+a9-46v,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+8C,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+8Av,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+8Ad,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+i6-8,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+s6-8,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+SFL,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+8BL,DLPFC,DorsoLateral Prefrontal Cortex,#800033
+AVI,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+MI,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+AAIC,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+Pir,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+PI,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+FOP2,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+FOP3,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+FOP4,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+FOP5,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+lg,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+52,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+Pol1,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+Pol2,IFOC,Insular and Frontal Opercular Cortex,#00CCFF
+STGa,AAC,Auditory Association Cortex,#FF1A1A
+STSda,AAC,Auditory Association Cortex,#FF1A1A
+STSva,AAC,Auditory Association Cortex,#FF1A1A
+STSvp,AAC,Auditory Association Cortex,#FF1A1A
+STSdp,AAC,Auditory Association Cortex,#FF1A1A
+TA2,AAC,Auditory Association Cortex,#FF1A1A
+A4,AAC,Auditory Association Cortex,#FF1A1A
+A5,AAC,Auditory Association Cortex,#FF1A1A
+PFop,IPC,Inferior Parietal Cortex,#0080E6
+PF,IPC,Inferior Parietal Cortex,#0080E6
+IP0,IPC,Inferior Parietal Cortex,#0080E6
+IP1,IPC,Inferior Parietal Cortex,#0080E6
+IP2,IPC,Inferior Parietal Cortex,#0080E6
+PFm,IPC,Inferior Parietal Cortex,#0080E6
+PGi,IPC,Inferior Parietal Cortex,#0080E6
+PGs,IPC,Inferior Parietal Cortex,#0080E6
+PFt,IPC,Inferior Parietal Cortex,#0080E6
+PGp,IPC,Inferior Parietal Cortex,#0080E6
