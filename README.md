@@ -14,6 +14,8 @@ This repository can be used to compare different burst detection algorithms (amo
 
 Keywords: Parkinson’s, speech, subthalamic nucleus, beta bursts, cycle-by-cycle
 
+## Task and main windows/measures/trial subdivisions?
+
 ## Dependencies
 The code depends on these repositories:
 * fieldtrip: toolbox to analyze electrophysiological data
