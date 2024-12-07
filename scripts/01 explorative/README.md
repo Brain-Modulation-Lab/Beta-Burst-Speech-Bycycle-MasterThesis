@@ -1,0 +1,4 @@
+ - ecog_distribution.m creates figure "ecog_coverage_barhplot.png" and "ecog_coverage_cortex.png", useful to check the cortical areas covered by the ecog electrodes.
+ - extract_n_session.m creates figure "n_session.png", useful to check the amount of sessions with DBS data in the dataset.
+ - intertrial_pauses.m creates "intertrial median pause.png", useful to decide epochs' timings.
+ - timing_epochs_syl1.m creates "timing around syl1 onset.png", useful to decide epochs' timing.
