@@ -1,1 +1,1 @@
-preprocessing
+ - preprocessing.m applies low pass filter, high pass filter and notch filter to the data.
