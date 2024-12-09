@@ -34,7 +34,7 @@ Before running the project, ensure you have the following installed:
 - Bycycle 1.0 wrap for MATLAB
 
 ## Structure of the project:
-Scripts and Figures directories have the following subforlders:
+Scripts and Figures directories have the following subfolders:
  -  1 explorative  
  -  2 preprocessing                   
  -  3 timefrquency analysis            
