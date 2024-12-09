@@ -25,15 +25,15 @@ epoch.B=cell(1,numel(SUBJECTS)); % time window syl1 - syl3
 for i=1:numel(SUBJECTS)
     % open a subject dir
     SUBJECT=strcat('DBS',string(SUBJECTS(i)));
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
-    sessions=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
+    PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
+    sessions=bml_annot_read(strcat(...SUBJECT,'_session'));
     
     % take sessions with DBS LFP data
     id_session=sessions.id(strcmpi(sessions.type, 'LEAD'));
 
     % take start and stopping trial info from annot tables
-    coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding'));
-    cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise'));
+    coding=bml_annot_read(strcat(...SUBJECT,'_coding'));
+    cue=bml_annot_read(strcat(...SUBJECT,'_cue_precise'));
     timing_cue=cue(cue.session_id==id_session,{'trial_id','stim1_starts'});
     timing_coding=coding(coding.session_id==id_session,{'trial_id','syl1_onset','syl3_offset'});
     
