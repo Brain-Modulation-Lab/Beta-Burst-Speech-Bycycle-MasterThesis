@@ -51,7 +51,7 @@ for a = 1:numel(areas)
             SUBJECT = strcat('DBS', string(SUBJECTS(i)));
             disp(strcat('Now running i= ', string(i), '   aka: ', SUBJECT))
 
-            PATH_ANNOT = strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+            PATH_ANNOT = strcat(... 'Preprocessed data\Sync\annot');
             electrode = bml_annot_read(strcat(PATH_ANNOT, filesep, SUBJECT, '_electrode'));
             electrode = electrode(:, {'id', 'starts', 'ends', 'duration', 'electrode', 'connector', 'port', 'HCPMMP1_label_1', 'HCPMMP1_weight_1'});
             cfg = [];
@@ -59,7 +59,7 @@ for a = 1:numel(areas)
             electrode = bml_getEcogArea(cfg, electrode);
 
             % Get BURSTS DATA
-            tab_stats = readtable(strcat('annot/general CTAR/areas/', SUBJECT, " ", 'bycycle features comparison.txt'));
+            tab_stats = readtable(strcat('..., " ", 'bycycle features comparison.txt'));
 
             if strcmp(area, 'dbs')
                 tab_stats_area = tab_stats( (startsWith(tab_stats.label,'dbs') & strcmp(tab_stats.measure, measure)) ,:);
@@ -121,7 +121,7 @@ for a = 1:numel(areas)
     legend({'Not significant', 'Positive t value', 'Negative t value'}, 'Location', 'northeastoutside')
 
     % Salva la figura
-    saveas(fig, strcat('images/bursts CTAR/areas/group/Proportion_significant_results',area,' ',comparison,'.png'))
-    saveas(fig, strcat('images/bursts CTAR/areas/group/Proportion_significant_results',area,' ',comparison,'.fig'))
+    saveas(fig, strcat('.../Proportion_significant_results',area,' ',comparison,'.png'))
+    saveas(fig, strcat('.../Proportion_significant_results',area,' ',comparison,'.fig'))
     close(fig)
 end
