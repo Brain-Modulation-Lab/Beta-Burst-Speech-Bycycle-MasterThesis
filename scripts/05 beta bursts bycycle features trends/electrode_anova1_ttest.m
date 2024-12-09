@@ -25,21 +25,21 @@ for i=ii
     SUBJECT=strcat('DBS',string(SUBJECTS(i)));
     disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
     
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
-    PATH_SIGNAL=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\FieldTrip\');
+    PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
+    PATH_SIGNAL=strcat(... 'Preprocessed data\FieldTrip\');
 
     % take sessions with DBS LFP data
     session=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
     id_session=session.id(strcmpi(session.type, 'LEAD'));
 
     % upload useful annot tables
-    coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding')); coding=coding(coding.session_id==id_session,:);
-    cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
-    prod_triplet=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_produced_triplet'));prod_triplet=prod_triplet(prod_triplet.session_id==id_session,:);
-    electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+    coding=bml_annot_read(strcat(...,'_coding')); coding=coding(coding.session_id==id_session,:);
+    cue=bml_annot_read(strcat(...,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
+    prod_triplet=bml_annot_read(strcat(...,'_produced_triplet'));prod_triplet=prod_triplet(prod_triplet.session_id==id_session,:);
+    electrode=bml_annot_read(strcat(...,'_electrode'));
     electrode=electrode(:, {'id', 'starts','ends','duration','electrode','connector','port','HCPMMP1_label_1','HCPMMP1_weight_1'});
     
-    load(fullfile(PATH_SIGNAL,'LFP beta burst',SUBJECT+"_clean_syl.mat"));
+    load(fullfile(...+"_clean_syl.mat"));
 
     cfg=[];
     cfg.decodingtype='basic';   % 'basic', 'bysubject', 'weight'
@@ -122,7 +122,6 @@ for i=ii
     cfg.method  = 'CTAR';   % using trimmed average referencing
     cfg.percent = 50;       % percentage of 'extreme' channels in group to trim
     ECOG=bml_rereference(cfg,ECOG);
-    % save(fullfile(PATH_SIGNAL,'LFP beta burst',SUBJECT+"_rebound_clean_ref_globt.mat"), 'E_ctar')
     
 
     % dbs
@@ -317,12 +316,6 @@ for i=ii
                 
             end
 
-%                 % colors
-%                 h = findobj(gca,'Tag','Box'); 
-%                 for box=1:length(h) % start from the end to count boxes!
-%                     patch(get(h(box),'XData'),get(h(box),'YData'),'b', 'FaceAlpha', 0.5, 'EdgeColor', 'k');
-%                 end
-
             ylimits=ylim;
             xlim([time(1) time(end)])
             fill([timing_windows.baseline.start timing_windows.baseline.end timing_windows.baseline.end timing_windows.baseline.start], [ylimits(1) ylimits(1) ylimits(2) ylimits(2)], [1 0.8 0.4], 'FaceAlpha', 0.1, 'EdgeColor', 'none');
@@ -400,8 +393,8 @@ for i=ii
             end
             title(strrep(measures{m},'_',' '))
         end
-        saveas(fig1,strcat('images/bursts CTAR/anova1/single level/',SUBJECT," ",strrep(electrodes_analysis{e},'_',' ')," ",measures{m},'.png'));
-        saveas(fig1,strcat('images/bursts CTAR/anova1/single level/',SUBJECT," ",strrep(electrodes_analysis{e},'_',' ')," ",measures{m},'.fig'));
+        saveas(fig1,strcat('...',SUBJECT," ",strrep(electrodes_analysis{e},'_',' ')," ",measures{m},'.png'));
+        saveas(fig1,strcat('...',SUBJECT," ",strrep(electrodes_analysis{e},'_',' ')," ",measures{m},'.fig'));
         close all
     end   
 end
