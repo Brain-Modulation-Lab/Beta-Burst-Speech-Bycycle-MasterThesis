@@ -13,4 +13,5 @@
     - "DBS3011 ecog131 stat test overlap.png" tests at the single level electrode the overlapping between the bursts identified by different methods comparing the degree of overlapping with 1000 random permutations.
   
  - **comparison_ifreq.m** analyzes the single burst frequencies identified by bycycle with the electrode frequencies identified by fooof.
-    - "bycycle fooof frequencies histograms.jpg" depicts 
+    - "bycycle fooof frequencies histograms.jpg" contains a histogram comparison at the region level
+    - "bycycle fooof frequencies trend.jpg" depicts the bycycle frequencies plotted over fooof frequencies for cortical areas and for the STN 
