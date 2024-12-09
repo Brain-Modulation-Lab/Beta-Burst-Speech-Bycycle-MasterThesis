@@ -29,6 +29,7 @@ The following speech metrics are identified using the Praat app:
  - Volume: acoustic stimulation volume in dB
  - Reaction time: average time in sec between the end of the acoustic stimulus and the beginning of the speech
  - Accuracy: speech acoustic with respect to the acoustic stimulus in percentage  
+
 The following speech metrics are identified using the TELL (Toolkit to Examine Lifelike Language) app:
  - Shimmer (mean and CV):  short-term variability in the amplitude of vocal signals
  - Jitter (mean and CV): short-term variability in the pitch or frequency of vocal signals
