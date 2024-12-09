@@ -1,3 +1,5 @@
- - **annot_anova2_ttest.m** creates annotation creates an annotation table (in the form of a txt file) for each subject for each bycycle burst feature saving the ANOVA 1 way F-statistic and correspective p value (indicative of how strongly the feature is changing during the trials of a single electrode), and the t-statistic and the corresponding p value result of the comparison of the activity of every exerimental window with respect to the baseline (indicative of how the feature is changing in each experimental window).
- - **electrode_anova2_ttest.m**
- - **cortex_anova2_ttest.m**
+ - **annot_anova2_ttest.m** creates an annotation table (in the form of a txt file) for each subject for each bycycle burst feature for each intertrial subdivision (all speech metrics are here considered) saving the ANOVA 2 way F-statistic and correspective p value (indicative of how strongly the feature is changing during the trials of a single electrode and depending on the trial subdivision), and the t-statistic with the corresponding p value result of the comparison of the activity with a low speech metric score vs a high speech metric score (indicative of how the feature is changing in each experimental window with respect to the speech metric).
+   
+ - **electrode_anova2_ttest.m** depits at the single electrode level the continuous and the discrete trend of each bycycle burst feature considering the intertrial subdivisions plotting also the F-statistic and t-statistics explained above. (see fig "DBS3011 ecog 131 features per metric.jpg")
+ 
+ - **cortex_anova2_ttest.m** plots over the anatomical substrates each bycycle burst features' significant (p<0.05) F-statistic and t-statistics explained above considering the intertrial subdivisions (see fig "cortex ... .jpg")
