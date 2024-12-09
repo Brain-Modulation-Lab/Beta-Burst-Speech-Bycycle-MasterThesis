@@ -36,17 +36,17 @@ for i=ii
     SUBJECT=strcat('DBS',string(SUBJECTS(i)));
     disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
     
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+    PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
 
     % take sessions with DBS LFP data
-    session=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
+    session=bml_annot_read(strcat(...,'_session'));
     id_session=session.id(strcmpi(session.type, 'LEAD'));
 
     % upload useful annot tables
-    coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding')); coding=coding(coding.session_id==id_session,:);
-    cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
-    prod_triplet=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_produced_triplet'));prod_triplet=prod_triplet(prod_triplet.session_id==id_session,:);
-    electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+    coding=bml_annot_read(strcat...,'_coding')); coding=coding(coding.session_id==id_session,:);
+    cue=bml_annot_read(strcat(...,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
+    prod_triplet=bml_annot_read(strcat(...,'_produced_triplet'));prod_triplet=prod_triplet(prod_triplet.session_id==id_session,:);
+    electrode=bml_annot_read(strcat(...,'_electrode'));
     electrode=electrode(:, {'id', 'starts','ends','duration','electrode','connector','port','HCPMMP1_label_1','HCPMMP1_weight_1'});
 
     cfg=[];
@@ -54,8 +54,8 @@ for i=ii
                                 % threshold_subj or threshold_weight
     electrode=bml_getEcogArea(cfg,electrode);
 
-    tab_fooof=readtable(strcat('annot/general CTAR/',SUBJECT,'_fooof_bursts.txt'));
-    tab_cycle=readtable(strcat('annot/general CTAR/',SUBJECT,'_cycle_bursts.txt'));
+    tab_fooof=readtable(strcat('...,'_fooof_bursts.txt'));
+    tab_cycle=readtable(strcat('...,'_cycle_bursts.txt'));
 
     % filter out bursts <=100ms NB CAMBIA MOLTO SE SI VEDE SOLO SOTTO 100ms!!
     tab_fooof=tab_fooof(tab_fooof.duration>0.1001,:);
