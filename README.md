@@ -15,7 +15,19 @@ This repository can be used to compare different burst detection algorithms (amo
 Keywords: Parkinson’s, speech, subthalamic nucleus, beta bursts, cycle-by-cycle
 
 ## Task and main windows/measures/trial subdivisions?
-**Task**:   
+**Task**: As visible in fig 3.10, participants performed a syllable repetition task intraoperatively. Subjects heard consonant-vowel-consonant (CVC) syllable triplets through earphones and were instructed to repeat them. Triplets were presented at either low ( 50dB SPL) or high ( 70dB SPL) volume. The absolute intensity was adjusted to each participant’s comfort level, keeping the difference between low and high-volume stimuli fixed at 25dB SPL. Participants were instructed to repeat the low-volume syllable triplets at normal conversation level and the high-volume triplets at increased volume, ”as if speaking to someone across the room”. The syllables were composed of a combination of either of the 4 English consonants (/v/, /t/, /s/, /g/) and either of the 3 cardinal vowels (/i/, /a, /u/), resulting in 12 unique CV syllables. For more details see the manuscript.
+  
+**Epoching**: Epochs are set from -1.4s before the beginning of the acoustic cue until +1.4s after the end of the speech, and contained the following experimental windows: baseline, stimulus, (prespeech), speech, postspeech (or rebound). For more detailes see the manuscript.
+  
+**Beta burst features**: The following beta bursts features are considered in this study: power, voltage, number of bursts, burst probability, duration, frequency, time symmetries.
+
+**Speech metrics**; The following speech metrics are considered:
+ - Volume: acoustic stimulation volume in dB
+ - Reaction time: average time in sec between the end of the acoustic stimulus and the beginning of the speech
+ - Accuracy: speech acoustic with respect to the acoustic stimulus in percentage
+ - Shimmer (mean and CV):  short-term variability in the amplitude of vocal signals
+ - Jitter (mean and CV): short-term variability in the pitch or frequency of vocal signals
+ - Speech rate: number of syllable spoken in a second
 
 ## Dependencies
 The code depends on these repositories:
