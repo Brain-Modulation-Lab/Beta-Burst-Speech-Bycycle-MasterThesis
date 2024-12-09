@@ -41,15 +41,15 @@ for w=1:numel(windows)
         SUBJECT=strcat('DBS',string(SUBJECTS(i)));
         disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
 
-        PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+        PATH_ANNOT=strcat(..., 'Preprocessed data\Sync\annot');
 
         % take sessions with DBS LFP data
-        session=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
+        session=bml_annot_read(strcat(...,SUBJECT,'_session'));
         id_session=session.id(strcmpi(session.type, 'LEAD'));
     
         % upload useful annot tables
-        coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding')); coding=coding(coding.session_id==id_session,:);
-        cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
+        coding=bml_annot_read(strcat(...,'_coding')); coding=coding(coding.session_id==id_session,:);
+        cue=bml_annot_read(strcat(...,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
 
         tokeepCod=(~isnan(coding.syl1_onset));
         tokeepCue=(~isnan(cue.stim1_starts));
