@@ -1,0 +1,3 @@
+ - **annot_anova2_ttest.m** creates annotation creates an annotation table (in the form of a txt file) for each subject for each bycycle burst feature saving the ANOVA 1 way F-statistic and correspective p value (indicative of how strongly the feature is changing during the trials of a single electrode), and the t-statistic and the corresponding p value result of the comparison of the activity of every exerimental window with respect to the baseline (indicative of how the feature is changing in each experimental window).
+ - **electrode_anova2_ttest.m**
+ - **cortex_anova2_ttest.m**
