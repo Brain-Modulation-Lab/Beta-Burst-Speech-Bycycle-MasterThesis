@@ -10,14 +10,14 @@ n_sub_PD_DBS=arrayfun(@(x) sprintf('%04d', x), n_sub_PD_DBS, 'UniformOutput', fa
 SUBJECTS=n_sub_PD_DBS;
 
 % data for cortex
-PATH_MNI_BRAIN='C:\Program Files\LeadDBS_Classic\leaddbs\templates\space/MNI_ICBM_2009b_NLIN_ASYM/cortex/CortexHiRes.mat';
+PATH_MNI_BRAIN='C:.../CortexHiRes.mat';
 ld=load(PATH_MNI_BRAIN, 'Vertices', 'Faces');
 cortex=reducepatch(ld.Faces, ld.Vertices, 0.3);
 faces_cortex = cortex.faces;
 vertices_cortex = cortex.vertices;
 
 % data for stn
-load("C:\Program Files\LeadDBS_Classic\leaddbs\templates\space\MNI_ICBM_2009b_NLIN_ASYM\atlases\DISTAL Minimal (Ewert 2017)\atlas_index.mat");
+load("C:\...\atlas_index.mat");
 target={'STN','GPi'};
 faceColors={[1 0.9 0.7],[0.7 0.9 0.7]};
 faceAlphas=[0.4 0.4];
@@ -64,7 +64,7 @@ for m=1:numel(measures)
         disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
         
         % get BURSTS DATA
-        tab=readtable(strcat('annot/general CTAR/anova1/',SUBJECT,'_anova1_',measure,'.txt'));
+        tab=readtable(strcat('...'_anova1_',measure,'.txt'));
         alldata{i}=tab;
     end
           
@@ -87,8 +87,8 @@ for m=1:numel(measures)
         disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
     
         % paths 
-        PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
-        electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+        PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
+        electrode=bml_annot_read(strcat(...,'_electrode'));
         cfg=[];
         cfg.decodingtype='basic';   % 'basic', 'bysubject', 'weight'
                                     % threshold_subj or threshold_weight
@@ -176,8 +176,8 @@ for m=1:numel(measures)
         disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
     
         % paths 
-        PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
-        electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+        PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
+        electrode=bml_annot_read(strcat(...,'_electrode'));
         cfg=[];
         cfg.decodingtype='basic';   % 'basic', 'bysubject', 'weight'
                                     % threshold_subj or threshold_weight
@@ -282,8 +282,8 @@ for m=1:numel(measures)
     %title(toEvaluate)
     end
 
-    saveas(fig1,strcat('images/bursts CTAR/anova1/',measures{m}," ",toEvaluate,'.png'));
-    saveas(fig1,strcat('images/bursts CTAR/anova1/',measures{m}," ",toEvaluate,'.fig'));
+    saveas(fig1,strcat('...," ",toEvaluate,'.png'));
+    saveas(fig1,strcat('...," ",toEvaluate,'.fig'));
     close all
 
 end
