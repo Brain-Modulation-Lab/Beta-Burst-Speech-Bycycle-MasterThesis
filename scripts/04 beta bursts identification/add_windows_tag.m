@@ -2,27 +2,27 @@ close all; clear all; clc
 
 %% add the window tags
 PATH_DATA='Z:\DBS';
-PATH_ANNOT_internal = 'annot/general CTAR/';
+PATH_ANNOT_internal = '.../general CTAR/';
 files = dir([pwd,'/annot/general CTAR/*.txt']);
 for file = files'
-    tab = readtable([PATH_ANNOT_internal,file.name]);
+    tab = readtable([...,file.name]);
 
     if ismember('window50', tab.Properties.VariableNames);continue;end
 
     SUBJECT=file.name(1:7);
     disp(['Now running ',file.name])
     
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+    PATH_ANNOT=strcat(..., 'Preprocessed data\Sync\annot');
 
     % take sessions with DBS LFP data
-    session=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
+    session=bml_annot_read(strcat(...,'_session'));
     id_session=session.id(strcmpi(session.type, 'LEAD'));
 
     % upload useful annot tables
-    coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding')); coding=coding(coding.session_id==id_session,:);
-    cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
-    prod_triplet=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_produced_triplet'));prod_triplet=prod_triplet(prod_triplet.session_id==id_session,:);
-    electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+    coding=bml_annot_read(strcat(...,'_coding')); coding=coding(coding.session_id==id_session,:);
+    cue=bml_annot_read(strcat(...,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
+    prod_triplet=bml_annot_read(strcat(...,'_produced_triplet'));prod_triplet=prod_triplet(prod_triplet.session_id==id_session,:);
+    electrode=bml_annot_read(strcat(...,'_electrode'));
     electrode=electrode(:, {'id', 'starts','ends','duration','electrode','connector','port','HCPMMP1_label_1','HCPMMP1_weight_1'});
 
     cfg=[];
