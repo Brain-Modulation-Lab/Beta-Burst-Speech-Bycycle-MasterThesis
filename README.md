@@ -34,13 +34,14 @@ Before running the project, ensure you have the following installed:
 - Bycycle 1.0 wrap for MATLAB
 
 ## Structure of the project:
- -  1_data_overview   
- -  2_preprocessing                   
- -  3_timefrquency_analysis            
- -  4_bursting_detection
- -  5_beta_bursts_speech 
- -  6_beta_speech_metrics  
-All the functions are in the folder "functions"
+Scripts and Figures directories have the following subforlders:
+ -  1 explorative  
+ -  2 preprocessing                   
+ -  3 timefrquency analysis            
+ -  4 beta bursts identification
+ -  5 beta bursts bycycle features trends
+ -  6 beta bursts bycycle speech metrics
+ All the related functions are in the folder "functions"
 
 Author: Lucia Poma
 
