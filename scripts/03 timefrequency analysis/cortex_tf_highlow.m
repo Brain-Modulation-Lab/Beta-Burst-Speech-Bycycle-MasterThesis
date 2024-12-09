@@ -9,14 +9,14 @@ n_sub_PD_DBS=[3003,3006,3008,3010:3012,3014,3015,3018,3020:3022,3024,3025,3027,3
 n_sub_PD_DBS=arrayfun(@(x) sprintf('%04d', x), n_sub_PD_DBS, 'UniformOutput', false);
 SUBJECTS=n_sub_PD_DBS;
 
-PATH_MNI_BRAIN='C:\Program Files\LeadDBS_Classic\leaddbs\templates\space/MNI_ICBM_2009b_NLIN_ASYM/cortex/CortexHiRes.mat';
+PATH_MNI_BRAIN='C:...cortex/CortexHiRes.mat';
 ld=load(PATH_MNI_BRAIN, 'Vertices', 'Faces');
 cortex=reducepatch(ld.Faces, ld.Vertices, 0.3);
 faces_cortex =cortex.faces;
 vertices_cortex =cortex.vertices;
 
 % data for stn
-load("C:\Program Files\LeadDBS_Classic\leaddbs\templates\space\MNI_ICBM_2009b_NLIN_ASYM\atlases\DISTAL Minimal (Ewert 2017)\atlas_index.mat");
+load("C:\...\atlas_index.mat");
 target={'STN','GPi'};
 faceColors={[1 0.9 0.7],[0.7 0.9 0.7]};
 faceAlphas=[0.4 0.4];
@@ -43,7 +43,7 @@ for i=ii
     SUBJECT=strcat('DBS',string(SUBJECTS(i)));
     disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
     % --------------- PUT HERE WHAT TO PLOT -----------------------------
-    tab=readtable(strcat('annot/general CTAR/',SUBJECT,'_speech_pow_db.txt')); 
+    tab=readtable(strcat(...,'_speech_pow_db.txt')); 
     alldata{i}=tab;
 end
 disp('-----------------------------------')
@@ -79,7 +79,7 @@ for i=ii
     disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
 
     % paths 
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+    PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
     electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
     cfg=[];
     cfg.decodingtype='basic';   % 'basic', 'bysubject', 'weight'
