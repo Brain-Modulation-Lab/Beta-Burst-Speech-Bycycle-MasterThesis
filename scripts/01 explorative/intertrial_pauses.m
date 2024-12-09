@@ -21,16 +21,16 @@ n_trials=cell(1,numel(SUBJECTS));
 for i=1:numel(SUBJECTS)
     % open a subject dir
     SUBJECT=strcat('DBS',string(SUBJECTS(i)));
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+    PATH_ANNOT=strcat(... 'Preprocessed data\Sync\annot');
     sessions=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
     
     % take sessions with DBS LFP data
     id_session=sessions.id(strcmpi(sessions.type, 'LEAD'));
 
     % take start and stopping trial info from annot tables
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
-    coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding'));
-    cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise'));
+    PATH_ANNOT=strcat... 'Preprocessed data\Sync\annot');
+    coding=bml_annot_read(strcat(...SUBJECT,'_coding'));
+    cue=bml_annot_read(strcat(...SUBJECT,'_cue_precise'));
     timing_starts=cue(cue.session_id==id_session,{'trial_id','stim1_starts'});
     timing_ends=coding(coding.session_id==id_session,{'trial_id','syl3_offset'});
     
