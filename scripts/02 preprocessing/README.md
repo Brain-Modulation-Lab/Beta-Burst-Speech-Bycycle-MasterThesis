@@ -1,4 +1,4 @@
-preprocessing.m:
+**preprocessing.m**:
  - applies low pass filter, high pass filter and notch filter,
  - applies a fixing factor for each patients based on their tabled data
  - applies epoching
