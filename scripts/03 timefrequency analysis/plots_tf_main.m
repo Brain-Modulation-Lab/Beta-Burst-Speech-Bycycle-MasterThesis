@@ -29,17 +29,17 @@ for i=1:numel(SUBJECTS)
 
     % paths 
     NAME_RAW_SIGNAL=strcat(SUBJECT,'_ft_raw_session');
-    PATH_SIGNAL=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\FieldTrip\');
-    PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+    PATH_SIGNAL=strcat(..., 'Preprocessed data\FieldTrip\');
+    PATH_ANNOT=strcat(..., 'Preprocessed data\Sync\annot');
 
     % take sessions with DBS LFP data
     session=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_session'));
     id_session=session.id(strcmpi(session.type, 'LEAD'));
 
     % upload useful annot tables
-    coding=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_coding')); coding=coding(coding.session_id==id_session,:);
-    cue=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
-    electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+    coding=bml_annot_read(strcat(...,'_coding')); coding=coding(coding.session_id==id_session,:);
+    cue=bml_annot_read(strcat(...,'_cue_precise')); cue=cue(cue.session_id==id_session, :);
+    electrode=bml_annot_read(strcat(...,'_electrode'));
     electrode=electrode(:, {'id', 'starts','ends','duration','electrode','connector','port','HCPMMP1_label_1','HCPMMP1_weight_1'});
 
     tokeepCod=(~isnan(coding.syl1_onset));
@@ -52,8 +52,7 @@ for i=1:numel(SUBJECTS)
     end
 
     % load data
-    load(fullfile(PATH_SIGNAL,'LFP beta burst',SUBJECT+"_clean_syl.mat"));a=-(A+LEFT);b=B+RIGHT;center=coding.syl1_onset(tokeepCod);
-    %load(fullfile(PATH_SIGNAL,'LFP beta burst',SUBJECT+"_clean_stim.mat"));a=-(IT+LEFT);b=A+RIGHT;center=cue.stim1_starts(tokeepCue);
+    load(fullfile(...+"_clean_syl.mat"));a=-(A+LEFT);b=B+RIGHT;center=coding.syl1_onset(tokeepCod);
     
     % define epoch and baseline for ft
     tf_epoch_t0=E.time{:};tf_epoch_t0=[tf_epoch_t0(1) tf_epoch_t0(end)];
