@@ -25,13 +25,13 @@ n_sub=[n_sub_PD,num2cell(n_sub_ET)];
 for i=1:numel(n_sub)
     % open a subject dir
     SUBJECT=strcat('DBS',string(n_sub(i)));
-    PATH_SUBJECT_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
+    PATH_SUBJECT_ANNOT=strcat(..., 'Preprocessed data\Sync\annot');
     
     % retrieve n session annot and type info
     if ~exist(PATH_SUBJECT_ANNOT)
         continue
     end
-    T=bml_annot_read(strcat(PATH_SUBJECT_ANNOT, filesep, strcat(SUBJECT, '_session.txt')));
+    T=bml_annot_read(strcat(... strcat(SUBJECT, '_session.txt')));
     
     %calculate n_sessions
     if i<=length(n_sub_PD)
