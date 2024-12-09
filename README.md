@@ -40,7 +40,7 @@ Scripts and Figures directories have the following subforlders:
  -  3 timefrquency analysis            
  -  4 beta bursts identification
  -  5 beta bursts bycycle features trends
- -  6 beta bursts bycycle speech metrics
+ -  6 beta bursts bycycle speech metrics \\
  All the related functions are in the folder "functions"
 
 Author: Lucia Poma
