@@ -49,8 +49,8 @@ for a=1:numel(areas)
         SUBJECT=strcat('DBS',string(SUBJECTS(i)));
         disp(strcat('Now running i= ',string(i),'   aka: ',SUBJECT))
         
-        PATH_ANNOT=strcat(PATH_DATA, filesep, SUBJECT, filesep, 'Preprocessed data\Sync\annot');
-        electrode=bml_annot_read(strcat(PATH_ANNOT,filesep,SUBJECT,'_electrode'));
+        PATH_ANNOT=strcat(..., 'Preprocessed data\Sync\annot');
+        electrode=bml_annot_read(strcat(...,'_electrode'));
         electrode=electrode(:, {'id', 'starts','ends','duration','electrode','connector','port','HCPMMP1_label_1','HCPMMP1_weight_1'});
         cfg=[];
         cfg.decodingtype='basic';   % 'basic', 'bysubject', 'weight'
@@ -58,16 +58,16 @@ for a=1:numel(areas)
         electrode=bml_getEcogArea(cfg,electrode);
             
         % get BURSTS DATA
-        tab_stats=readtable(strcat('annot/general CTAR/areas/',SUBJECT," ",'bycycle features comparison.txt'));
+        tab_stats=readtable(strcat('...,SUBJECT," ",'bycycle features comparison.txt'));
         
         if strcmp(area,'dbs')
             tab_stats_area=tab_stats( (startsWith(tab_stats.label,'dbs') & strcmp(tab_stats.measure,measure)) ,:);
             switch measure
                 case {'duration','volt_amp','time_rdsym','time_ptsym','frequency'}
-                    tab_meas=readtable(strcat('annot/general CTAR/',SUBJECT,'_cycle_bursts.txt'));
+                    tab_meas=readtable(strcat('...,'_cycle_bursts.txt'));
                     tab_meas_area=tab_meas( (startsWith(tab_meas.chan_id,'dbs')) ,:);
                 case {'n_bursts','perc_bursts'}
-                    tab_meas=readtable(strcat('annot/general CTAR/bursts occurrence/',SUBJECT,'_bursts_occurrence.txt'));
+                    tab_meas=readtable(strcat('...',SUBJECT,'_bursts_occurrence.txt'));
                     tab_meas_area=tab_meas( (startsWith(tab_meas.label,'dbs')) ,:);
             end
         else
@@ -75,10 +75,10 @@ for a=1:numel(areas)
             tab_stats_area=tab_stats( (ismember(tab_stats.label,area_channels) & strcmp(tab_stats.measure,measure)) ,:);
             switch measure
                 case {'probability','duration','volt_amp','time_rdsym','time_ptsym','frequency'}
-                    tab_meas=readtable(strcat('annot/general CTAR/',SUBJECT,'_cycle_bursts.txt'));
+                    tab_meas=readtable(strcat('...',SUBJECT,'_cycle_bursts.txt'));
                     tab_meas_area=tab_meas( (ismember(tab_meas.chan_id,area_channels)) ,:);
                 case {'n_bursts','perc_bursts'}
-                    tab_meas=readtable(strcat('annot/general CTAR/bursts occurrence/',SUBJECT,'_bursts_occurrence.txt'));
+                    tab_meas=readtable(strcat('a..../',SUBJECT,'_bursts_occurrence.txt'));
                     tab_meas_area=tab_meas( (ismember(tab_meas.label,area_channels)) ,:);
             end
         end
@@ -132,8 +132,8 @@ for a=1:numel(areas)
     end    
 end
 
-saveas(fig1,strcat('images/bursts CTAR/areas/group/','Baseline-',stat_toEvaluate," ",measure,'.png'))
-saveas(fig1,strcat('images/bursts CTAR/areas/group/','Baseline-',stat_toEvaluate," ",measure,'.fig'))
+saveas(fig1,strcat('...,'Baseline-',stat_toEvaluate," ",measure,'.png'))
+saveas(fig1,strcat('...,'Baseline-',stat_toEvaluate," ",measure,'.fig'))
 close all
 disp('-----------------------------------')
 disp('-----------------------------------')
