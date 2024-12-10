@@ -1,4 +1,4 @@
-# Beta Bust Speech Bycycle Analysis
+# Beta Bust Speech Bycycle Study
 ## Neural Engineering Master Degree Thesis Project 
 ## Title: "Investigation of intracranial electrophysiological dynamics  of the cortico-basal ganglia circuit in Parkinsonian patients performing intraoperative speech production tasks" 
 Author: Lucia Poma  
