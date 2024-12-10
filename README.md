@@ -56,7 +56,7 @@ Before running the project, ensure you have the following installed:
 Scripts and Figures directories have the following subfolders:
  -  1 explorative  
  -  2 preprocessing                   
- -  3 timefrquency analysis            
+ -  3 timefrequency analysis            
  -  4 beta bursts identification
  -  5 beta bursts bycycle features trends
  -  6 beta bursts bycycle speech metrics  
