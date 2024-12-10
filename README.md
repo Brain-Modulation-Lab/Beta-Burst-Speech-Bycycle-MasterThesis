@@ -14,7 +14,7 @@ This repository can be used to compare different burst detection algorithms (amo
 
 Keywords: Parkinson’s, speech, subthalamic nucleus, beta bursts, cycle-by-cycle
 
-## Task and main windows/measures/trial subdivisions?
+## Task, features and metrics considered
 **Task**  
 As visible in fig 3.10, participants performed a syllable repetition task intraoperatively. Subjects heard consonant-vowel-consonant (CVC) syllable triplets through earphones and were instructed to repeat them. Triplets were presented at either low ( 50dB SPL) or high ( 70dB SPL) volume. The absolute intensity was adjusted to each participant’s comfort level, keeping the difference between low and high-volume stimuli fixed at 25dB SPL. Participants were instructed to repeat the low-volume syllable triplets at normal conversation level and the high-volume triplets at increased volume, ”as if speaking to someone across the room”. The syllables were composed of a combination of either of the 4 English consonants (/v/, /t/, /s/, /g/) and either of the 3 cardinal vowels (/i/, /a, /u/), resulting in 12 unique CV syllables. For more details see the manuscript.
   
