@@ -34,7 +34,7 @@ The following speech metrics are identified using the TELL (Toolkit to Examine L
  - Shimmer (mean and CV):  short-term variability in the amplitude of vocal signals
  - Jitter (mean and CV): short-term variability in the pitch or frequency of vocal signals
  - Speech rate: number of syllable spoken in a second
-
+  
 ## Dependencies
 The code depends on these repositories:
 * fieldtrip: toolbox to analyze electrophysiological data
@@ -62,5 +62,8 @@ Scripts and Figures directories have the following subfolders:
  -  6 beta bursts bycycle speech metrics  
  All the related functions are in the folder "functions"
 
+README.md files will be present in the scripts' subfolders, describing also the correspective figures.
+  
+  
 Author: Lucia Poma
 
